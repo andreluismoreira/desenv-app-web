@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.utils;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("Spring Boot REST API")
-                .description("\"Ted-03 Carlos Metodo Put\"")
+                .description("\"Desenvolvimento de Aplicações Web Avançadas\"")
                 .version("1.0.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")

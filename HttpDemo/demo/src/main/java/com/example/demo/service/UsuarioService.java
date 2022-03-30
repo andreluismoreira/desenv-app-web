@@ -12,7 +12,11 @@ import java.util.Optional;
 public class UsuarioService {
 
     @Autowired
-    UsuarioRepository repository;
+    private UsuarioRepository repository;
+
+    public UsuarioService(UsuarioRepository repository) {
+        this.repository = repository;
+    }
 
     public void salvarUsuario(Usuario usuario){
         this.repository.save(usuario);

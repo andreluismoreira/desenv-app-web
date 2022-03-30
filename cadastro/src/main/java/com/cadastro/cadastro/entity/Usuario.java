@@ -1,16 +1,12 @@
-package com.example.demo.entity;
+package com.cadastro.cadastro.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+//@Builder
 @Getter
 @Setter
 @Entity
@@ -32,5 +28,7 @@ public class Usuario {
     @Column
     private String telefone;
 
+    @Column
+    private String senha;
 
 }
