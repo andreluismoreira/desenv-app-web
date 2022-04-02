@@ -33,27 +33,24 @@ public class UsuarioService {
 
     }
 
-    public UsuarioResponse buscarPorId(Long id){
-        return (UsuarioResponse)
-                converterUtils.convertEntityToResponse(
-                        this.repository.findById(id).orElseThrow(()-> new ResourceNotFoundException("User not found")),
-                        UsuarioResponse.class);
-    }
-
     public void salvarUsuario(UsuarioRequest request){
         this.repository.save(
                 (Usuario) converterUtils.convertRequestToEntity(request, Usuario.class)
         );
     }
 
+    public UsuarioResponse buscarPorId(Long id){
+        return (UsuarioResponse)
+        converterUtils.convertEntityToResponse(this.repository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("User not found")),UsuarioResponse.class);
+    }
+
     public void updateUsuario(UsuarioRequest request, Long id){
          var entity = this.repository.findById(id)
-                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
-
+                 .orElseThrow(() -> new EntityNotFoundException("Entity not found"));
          var entityUpdated = (Usuario) converterUtils.convertRequestToEntity(request, entity.getClass());
          entityUpdated.setId(id);
          this.repository.save(entityUpdated);
-
     }
 
     public void deletarUsuario(Long id){
