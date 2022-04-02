@@ -45,8 +45,9 @@ public class UsuarioController {
 
     @PutMapping("/{id}")
     @ApiOperation(value= "Atualiza um usuário no banco")
-    public void atualizar(@RequestBody UsuarioRequest request, @PathVariable Long id){
+    public ResponseEntity<?> atualizar(@RequestBody UsuarioRequest request, @PathVariable Long id) {
         service.updateUsuario(request, id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @DeleteMapping("/{id}")

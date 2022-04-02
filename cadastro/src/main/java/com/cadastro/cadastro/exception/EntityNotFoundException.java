@@ -3,11 +3,9 @@ package com.cadastro.cadastro.exception;
 import lombok.Getter;
 
 @Getter
-public class EntityNotFoundException extends RuntimeException{
-
-    private final String msg;
+public class EntityNotFoundException extends RuntimeException {
 
     public EntityNotFoundException(String msg) {
-        this.msg = msg;
+        super(msg);
     }
 }
