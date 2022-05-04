@@ -7,4 +7,6 @@ O Projeto Demo foi execultado aos poucos na sala de aula para absorção do cont
 
 O projeto Cadastro foi realizado aplicando os conhecimentos aprendidos em aula e é parte integrante da 1° Nota.
 
+Adição do spring actuator: para visualizar as opçãoes acessar http://localhost:8080/actuator
+
 Ministrada pelo Prof: Carlos Barbosa.
