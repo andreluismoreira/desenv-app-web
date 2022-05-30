@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "18792cfb-7ae3-4ff4-9f7f-50f306e84539",
+		"name": "Pandemic Combat Aid System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14542237"
+	},
+	"item": [
+		{
+			"name": "Buscar hospital por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar hospital",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Hospital Padre Alfredo\",\r\n    \"address\" : \"Rua Arthur Santos Viana\",\r\n    \"cnpj\" : \"54644402000158\",\r\n    \"percentageOfOccupation\": 30,\r\n    \"localization\" : {\r\n        \"latitude\" : \"-18.61858961\",\r\n        \"longitude\" : \"-21.8365497\"\r\n    },\r\n    \"resource\" : {\r\n        \"items\" : [\r\n            {\r\n                \"name\" : \"Doctor\",\r\n                \"amount\" : 4\r\n            },\r\n            {\r\n                \"name\" : \"Nurse\",\r\n                \"amount\" : 6\r\n            },\r\n            {\r\n                \"name\" : \"Ambulance\",\r\n                \"amount\" : 5\r\n            },\r\n            {\r\n                \"name\" : \"Tomograph\",\r\n                \"amount\" : 3\r\n            },\r\n            {\r\n                \"name\" : \"Respirator\",\r\n                \"amount\" : 2\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os hospitais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalhar hospital",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/page",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"page"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Ocupação",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"percentageOfOccupation\": 80}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hospitals/occupation/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"occupation",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Intercambio de equipamentos entre Hospitais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"idHospital\" : 1,\r\n        \"items\" : [\r\n            {\r\n                \"name\": \"Doctor\",\r\n                \"amount\": 4\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"idHospital\" : 2,\r\n        \"items\" : [\r\n            {\r\n                \"name\": \"Tomograph\",\r\n                \"amount\": 1\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/hospitals/negotiation",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"negotiation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Relatorio da situação dos Hospitais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hospitals/reports",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hospitals",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
